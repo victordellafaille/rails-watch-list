@@ -1,13 +1,17 @@
-<h1><%= @list.name %></h1>
-<p> <%= link_to "back", lists_path(@list) %> |
-<%= link_to "Create new bookmark", new_list_bookmark_path(@list) %> </p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('list_background.png') %>)">  <div class="container">
+    <h1><%= @list.name %></h1>
+    <div class="button-div d-flex justify-content-center">
+      <p> <%= link_to "back", lists_path, class: "btn btn-primary" %>
+      <%= link_to "Create new bookmark", new_list_bookmark_path(@list), class: "btn btn-primary" %> </p>
+    </div>
+  </div>
+</div>
 
 <br>
 
 <div class="b-cards d-flex justify-content-center">
-  <% @bookmarks.each do |bookmark| %>
+  <% @list.bookmarks.each do |bookmark, movie| %>
     <div class="b-card mx-2">
-      <img src="https://www.denofgeek.com/wp-content/uploads/2017/09/shawshank_main.jpg?fit=1280%2C720" />
       <div class="b-card-info">
         <h2><%= bookmark.movie.title %> | <%= bookmark.movie.rating %> </h2>
         <p><%= bookmark.comment %></p>

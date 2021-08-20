@@ -24,10 +24,13 @@ require 'json'
 Movie.destroy_all
 Bookmark.destroy_all
 
-url = "http://tmdb.lewagon.com/movie/top_rated?api_key=872e57405271bd6e0fc6cffd79de4392"
+url = 'http://tmdb.lewagon.com/movie/top_rated?api_key=872e57405271bd6e0fc6cffd79de4392'
 movie_serialized = URI.open(url).read
-movie = JSON.parse(movie_serialized)
+movies = JSON.parse(movie_serialized)
 
-movie['results'].each do |movie|
-  Movie.create!(title: movie['title'], overview: movie['overview'], rating: movie['vote_average'])
+movies['results'].each do |movie|
+  base_url = 'https://image.tmdb.org/t/p/original'
+  p Movie.create!(title: movie['title'], overview: movie['overview'], rating: movie['vote_average'], poster_url: "#{base_url}#{movie['poster_path']}")
 end
+
+puts "finished"

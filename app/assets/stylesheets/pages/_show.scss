@@ -1,4 +1,21 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
 
+h1 {
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-align: center;
+}
+
+.action {
+  text-align: center;
+}
 
 .b-card {
   background: white;
@@ -32,6 +49,21 @@
   position: relative;
   background-color: white;
 }
+
+.btn-primary {
+  background-color: #1BCB7F;
+  border: 1px solid #1BCB7F;
+  border-radius: 15px;
+  opacity: 0.7;
+}
+
+.btn-primary:hover {
+  background: #1BCB7F;
+  border: 1px solid #1BCB7F;
+  color: white;
+  opacity: 1;
+}
+
 
 .delete a{
   color: red
