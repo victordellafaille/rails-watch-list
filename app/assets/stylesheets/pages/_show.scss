@@ -1,0 +1,38 @@
+
+
+.b-card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 310px;
+  width: 450px;
+}
+
+.b-card > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.b-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.b-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.b-card .b-card-info {
+  padding: 16px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  background-color: white;
+}
+
+.delete a{
+  color: red
+}

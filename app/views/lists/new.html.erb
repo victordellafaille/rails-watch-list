@@ -1,5 +1,5 @@
-<%= form_for(@list) do |l| %>
-  <%= l.label :name %>
-  <%= l.text_field :name %>
+<%= simple_form_for(@list) do |l| %>
+  <%= l.input :name %>
+  <%= l.input :photo %>
   <%= l.submit %>
 <% end %>

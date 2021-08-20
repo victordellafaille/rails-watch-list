@@ -4,10 +4,17 @@
 
 <br>
 
-<% @bookmarks.each do |bookmark| %>
-    <h3><%= bookmark.movie.title %></h3>
-    <%= bookmark.comment %>
-    <%= link_to "delete this bookmark", bookmark_path(bookmark), method: :delete, data: {confirm: "Are you sure?"} %>
-<% end %>
+<div class="b-cards d-flex justify-content-center">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="b-card mx-2">
+      <img src="https://www.denofgeek.com/wp-content/uploads/2017/09/shawshank_main.jpg?fit=1280%2C720" />
+      <div class="b-card-info">
+        <h2><%= bookmark.movie.title %> | <%= bookmark.movie.rating %> </h2>
+        <p><%= bookmark.comment %></p>
+        <p class="delete"><%= link_to "delete", bookmark_path(bookmark), method: :delete, data: {confirm: "Are you sure?"} %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <br> <br>
